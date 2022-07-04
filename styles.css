@@ -1,79 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+
+:root{
+    /*Colores*/
+    --primary: black;
+    --secondary: rgb(148, 0, 0);
+    --alternative: red;
+    --other: rgb(245, 245, 245);
+
+    /*Espacios*/
+    --spacing-large: 6rem;
+    --spacing-medium: 3rem;
+    --spacing-small: 2rem;
+
+    /*Fuentes*/
+    --font-principal: 'Lato', sans-serif;
+    --font-title: 'Roboto Mono', serif;
+
+    /*Tamaños de fuente*/
+    --text-large: 7rem;
+    --text-medium: 2rem;
+    --text-small: 1.2rem;
+    --text-xsmall: 1rem;
+}
+
 *{
     margin: 0;
     padding: 0;
 }
 
-.fondo_principal{
-    background-image: url(https://cdn.pixabay.com/photo/2019/06/30/18/19/tv-4308537_1280.jpg);
-    background-size: cover;
-    background-repeat:no-repeat;
-    background-position: center center;
+.menu-icono{
+    width: 50px;
+    cursor: pointer;
+    display: none;
 }
 
 .menu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    justify-content: flex-end;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    padding: 20px;
+}
+
+nav ul li{
     list-style: none;
-    background-color: rgb(0, 0, 0);
-    width: 1000px;
-    height: 44px;
-    padding-right: 280px;
-}
-
-.menu li a{
-    font-weight: bold;
-    list-style: none;
-    text-decoration: none; 
-    color: rgb(87, 0, 0);
-    padding: 12px 20px;
-    font-family: 'Roboto Slab', serif;
-    font-size: 18px;
     display: inline-block;
+    margin-right: 30px;
 }
 
-.menu li{
-    display: inline-block;
-    text-align: left;
-}
-.menu a:hover{
-    color: rgb(179, 5, 5);
+nav ul li a{
+    font-family: var(--font-principal);
+    text-decoration: none;
+    color: var(--primary);
+    font-size: var(--text-xsmall);
+    transition: 1s;
 }
 
-section h1{
-    color: rgb(130, 12, 12);
-    text-shadow: 8px 8px black;
-    font-size: 130px;
-    text-align: center;
-    font-family: 'Roboto Mono', monospace;
-    font-weight: bold;
+nav ul li a:hover{
+    color: var(--alternative);
+    font-size: var(--text-small);
+    transition: all 1s;
+}
+
+nav ul.show{
+    top: 65px;
+}
+
+main .grid{
+    display: grid;
+    grid-template-areas: 
+        ".          ."
+        "titulo     boton"
+        "subtitulo  boton"
+        "subtitulo  boton"
+        "footer     footer";
+    align-items: center;
+    justify-items: center;
+    row-gap: var(--spacing-large);
+    column-gap: var(--spacing-medium);
+}
+
+.grid .titulo{
+    display: grid;
+    grid-area: titulo;
+    font-size:var(--text-large);
     text-transform: uppercase;
-    margin-top: 20px;
-    display: block;
+    color: var(--secondary);
+    font-family: var(--font-title);
+    justify-self: end;
+    align-self: end;
 }
 
-section h2{
-    text-align: center;
-    font-family: 'Roboto Slab', serif;
-    text-shadow: 4px 4px black;
-    font-size: 35px;
-    color: whitesmoke;
-    margin-left: 100px;
-    margin-right: 100px;
-    margin-top: 30px;
+.subtitulo{
+    grid-area: subtitulo;
+    font-size: var(--text-medium);
+    color: var(--primary);
+    font-family: var(--font-principal);
+    padding-left: 10%;
+    align-self: start;
+}
+
+.boton{
+    grid-area: boton;
+    align-items: center;
+    max-width: fit-content;
+    min-width: none;
 }
 
 .footer{
-    text-align: center;
-    font-family: 'Roboto Slab', serif;
-    padding-right: 50px;
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    background-color: rgb(0, 0, 0);
+    grid-area: footer;
+    font-family: var(--font-principal);
+    color: var(--primary);  
+    font-size: var(--text-small);
 }
 
-#foto{
-    width: 200px;
-    height: 200px;
-    padding-left: 500px;
-    padding-right: 500px;
-    margin-top: 60px;
+.fondo{
+    background-image: linear-gradient(90deg, rgb(10, 10, 10), rgb(148, 0, 0));
+    background-attachment: fixed;
+}
+
+.formulario{
+    background-color: var(--other);
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    margin: auto;
+    gap: 10px;
+    font-family: var(--font-principal); 
+    margin-top: 30px;
+    margin-bottom: 50px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 6px 0 white;
+    width: fit-content;
+}
+
+.separador{
+    font-family: var(--font-principal);
+    color: var(--other);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 50px 50px;
+    gap: 15px;
+}
+
+.separador hr{
+    flex-grow: 1;
+    border: none;
+    border-top: 1px solid var(--other);
+}
+
+.formulario label input{
+    display: flex;
+    background-color: var(--other);
+    border: none;
+    border-bottom: 1px solid var(--primary);    
+    padding: 10px 50px;
+    outline: none;
+    justify-self: left;
+}
+
+.formulario label{
+    color: rgb(47, 47, 47);
+    justify-self: center;
+    gap: 5px;
+}
+
+#check{
+    margin: auto;
+    margin-top: 10px;
+    align-self: center;
+    justify-self: center;
+}
+
+.boton2{
+    margin: auto;
+    background-color: var(--other);
+    border: none;
+    font-family: var(--font-principal);
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 1s;
+}
+
+.boton2:hover{
+    cursor: pointer;
+    background-color: rgb(208, 208, 208);
+    transition: all 1s;
+}
+
+@media screen and (max-width: 600px){
+    .menu-icono{
+        display: flex;
+        max-width: fit-content;
+        justify-self: flex-end;
+        align-self: flex-end;
+    }
+
+    .menu{
+        flex-direction: row;
+    }
+
+    main .grid{
+        display: grid;
+        grid-template-areas: 
+            "titulo"
+            "subtitulo"
+            "boton"
+            "footer";
+        grid-template-columns: auto;
+        grid-template-rows: 1fr, 1fr, 1fr, 0.5fr;
+        max-width: fit-content;
+        margin: 15px;
+    }
+
+    .titulo{
+        justify-self: stretch;
+        align-self: end;
+    }
+    .subtitulo{
+        justify-self: self-start;
+        align-self: start;
+    }
 }
