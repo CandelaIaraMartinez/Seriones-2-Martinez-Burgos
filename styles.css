@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 :root{
     /*Colores*/
@@ -16,7 +15,7 @@
 
     /*Fuentes*/
     --font-principal: 'Lato', sans-serif;
-    --font-title: 'Roboto Mono', serif;
+    --font-title: 'Poppins', sans-serif;;
 
     /*Tamaños de fuente*/
     --text-large: 7rem;
@@ -30,45 +29,46 @@
     padding: 0;
 }
 
-.menu-icono{
-    width: 50px;
-    cursor: pointer;
+header{
+    width: 100%;
+    background: var(--secondary);
+}
+
+#btn-menu{
     display: none;
 }
 
-.menu{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    justify-content: flex-end;
-    flex-direction: row;
-    width: 100%;
-    align-items: center;
-    padding: 20px;
+header label{
+    display: none;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
 }
 
-nav ul li{
+header label:hover{
+    cursor: pointer;
+    background: rgb(116, 2, 2);
+}
+
+.menu ul{
+    margin: 0;
     list-style: none;
-    display: inline-block;
-    margin-right: 30px;
-}
-
-nav ul li a{
+    padding: 0;
+    display: flex;
     font-family: var(--font-principal);
-    text-decoration: none;
-    color: var(--primary);
-    font-size: var(--text-xsmall);
-    transition: 1s;
-}
-
-nav ul li a:hover{
-    color: var(--alternative);
     font-size: var(--text-small);
-    transition: all 1s;
+    flex-direction: row;
 }
 
-nav ul.show{
-    top: 65px;
+.menu li a{
+    display: block;
+    padding: 15px 20px;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.menu li:hover{
+    background:  rgb(165, 1, 1);
 }
 
 main .grid{
@@ -198,18 +198,164 @@ main .grid{
     transition: all 1s;
 }
 
-@media screen and (max-width: 600px){
-    .menu-icono{
-        display: flex;
-        max-width: fit-content;
-        justify-self: flex-end;
-        align-self: flex-end;
+/*Nosotros*/
+
+main .flexbox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    gap: 20px;
+}
+
+.nosotros{
+    font-family: var(--font-title);
+    font-size: var(--text-large);
+    color: var(--secondary);
+    text-shadow: 1px 1px 2px var(--primary), 0 0 1em var(--primary), 0 0 0.2em var(--primary);
+}
+
+.intro{
+    font-family: var(--font-principal);
+    font-size: 1.5rem;
+    line-height: 35px;
+    color: var(--other);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.404);
+    padding: 40px;
+    margin-left: 10%;
+    margin-right: 10%;
+    box-shadow: 0 0 6px 0 rgb(8, 8, 8);
+}
+
+#boton{
+    background-color: rgba(0, 0, 0, 0.404);
+    color: var(--secondary);
+    font-size: var(--text-small);
+    margin-top: 10px;
+    border: none;
+    font-family: var(--font-principal);
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+/*Catalogo*/
+
+.buscador{
+    border-radius: 5px;
+    margin-left: 20px;
+    padding: 10px 10px;
+    border: none;
+    font-family: var(--font-principal);
+    font-size: var(--text-small);
+    color: white;
+    background: rgba(7, 7, 7, 0.623);
+    outline: none;
+    display: inline;
+}
+
+#lupa{
+    margin-top: 10px;
+    display: inline;
+}
+
+.series{
+    font-size: var(--text-medium);
+    font-family: var(--font-principal);
+    color: rgb(230, 230, 230);
+    display: block;
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.imagenes img{
+    object-fit: cover;
+    height: 400px;
+    width: 300px;
+    margin-right: 10px;
+}
+
+.imagenes{
+    margin-top: 20px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.amigos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 40px;
+    overflow-y: auto;
+}
+
+.amigos img{
+    width: 200px;
+    height: 250px;
+}
+
+.boton3{
+    color: rgb(230, 230, 230);
+    background-color: rgba(7, 7, 7, 0.623);
+    border: none;
+    font-family: var(--font-principal);
+    font-size: var(--text-small);
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+.boton3:hover{
+    background-color: rgba(35, 35, 35, 0.792);
+}
+
+.footer2{
+    font-size: var(--text-small);
+    font-family: var(--font-principal);
+    color: rgb(0, 0, 0);
+    display: block;
+    position: relative;
+    bottom: 0;
+    margin-left: 43%;
+    margin-top: 50px;
+}
+
+@media screen and (max-width: 860px){
+    header{
+        display: block;
+        width: 100%;
+        margin: 0;
+    }
+
+    header label{
+        display: block;
     }
 
     .menu{
-        flex-direction: row;
+        position: absolute;
+        background: var(--secondary);
+        width: 30%;
+        margin-left: -70%;
+        transition: all 0.5s;
     }
 
+    .menu ul{
+        flex-direction: column;
+    }
+
+    #btn-menu:checked ~ .menu{
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 600px){
     main .grid{
         display: grid;
         grid-template-areas: 
