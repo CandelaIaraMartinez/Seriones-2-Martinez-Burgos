@@ -29,7 +29,25 @@
     padding: 0;
 }
 
+html{
+    height: 100%;
+}
+
+.grid{
+    display: grid;
+    grid-template-areas:
+        "menu menu" 
+        "titulo boton"
+        "subtitulo boton"
+        "footer footer";
+    align-items: center;
+    justify-items: center;
+    row-gap: var(--spacing-large);
+    column-gap: var(--spacing-medium);
+}
+
 header{
+    grid-area: menu;
     width: 100%;
     background: var(--secondary);
 }
@@ -71,21 +89,7 @@ header label:hover{
     background:  rgb(165, 1, 1);
 }
 
-main .grid{
-    display: grid;
-    grid-template-areas: 
-        ".          ."
-        "titulo     boton"
-        "subtitulo  boton"
-        "subtitulo  boton"
-        "footer     footer";
-    align-items: center;
-    justify-items: center;
-    row-gap: var(--spacing-large);
-    column-gap: var(--spacing-medium);
-}
-
-.grid .titulo{
+.titulo{
     display: grid;
     grid-area: titulo;
     font-size:var(--text-large);
@@ -97,6 +101,7 @@ main .grid{
 }
 
 .subtitulo{
+    display: grid;
     grid-area: subtitulo;
     font-size: var(--text-medium);
     color: var(--primary);
@@ -106,6 +111,7 @@ main .grid{
 }
 
 .boton{
+    display: grid;
     grid-area: boton;
     align-items: center;
     max-width: fit-content;
@@ -113,6 +119,7 @@ main .grid{
 }
 
 .footer{
+    display: grid;
     grid-area: footer;
     font-family: var(--font-principal);
     color: var(--primary);  
@@ -210,9 +217,12 @@ main .flexbox{
 
 .nosotros{
     font-family: var(--font-title);
-    font-size: var(--text-large);
+    font-size: 5rem;
     color: var(--secondary);
     text-shadow: 1px 1px 2px var(--primary), 0 0 1em var(--primary), 0 0 0.2em var(--primary);
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .intro{
@@ -359,12 +369,13 @@ main .flexbox{
     main .grid{
         display: grid;
         grid-template-areas: 
+            "menu"
             "titulo"
             "subtitulo"
             "boton"
             "footer";
         grid-template-columns: auto;
-        grid-template-rows: 1fr, 1fr, 1fr, 0.5fr;
+        grid-template-rows: 0.5fr, 1fr, 1fr, 1fr, 0.5fr;
         max-width: fit-content;
         margin: 15px;
     }
