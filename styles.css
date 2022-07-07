@@ -119,6 +119,15 @@ header label:hover{
     justify-self: center;
 }
 
+.boton:hover{
+    animation: rotar 1s;
+}
+
+@keyframes rotar{
+    from{transform: rotateZ(0deg);}
+    to{transform: rotateZ(360deg);}
+}
+
 footer{
     grid-area:footer;
     font-family: var(--font-principal);
