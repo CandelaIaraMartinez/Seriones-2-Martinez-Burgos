@@ -18,7 +18,7 @@
     --font-title: 'Poppins', sans-serif;;
 
     /*Tamaños de fuente*/
-    --text-large: 7rem;
+    --text-large: 6rem;
     --text-medium: 2rem;
     --text-small: 1.2rem;
     --text-xsmall: 1rem;
@@ -30,25 +30,28 @@
 }
 
 html{
+    width: 100%;
     height: 100%;
 }
 
 .grid{
     display: grid;
     grid-template-areas:
-        "menu menu" 
-        "titulo boton"
+        "menu      menu" 
+        "titulo    boton"
         "subtitulo boton"
-        "footer footer";
+        "footer    footer";
+    grid-template-rows: 10%, 40%, 40%, 10%;
+    grid-template-columns: 2fr, auto;
     align-items: center;
     justify-items: center;
-    row-gap: var(--spacing-large);
-    column-gap: var(--spacing-medium);
+    row-gap: 70px;
 }
 
 header{
     grid-area: menu;
     width: 100%;
+    height: 100%;
     background: var(--secondary);
 }
 
@@ -90,40 +93,39 @@ header label:hover{
 }
 
 .titulo{
-    display: grid;
     grid-area: titulo;
-    font-size:var(--text-large);
     text-transform: uppercase;
     color: var(--secondary);
     font-family: var(--font-title);
-    justify-self: end;
+    font-size:var(--text-large);
+    justify-self: start;
     align-self: end;
+    padding-left: 30px;
 }
 
 .subtitulo{
-    display: grid;
     grid-area: subtitulo;
     font-size: var(--text-medium);
     color: var(--primary);
     font-family: var(--font-principal);
-    padding-left: 10%;
+    justify-self: start;
     align-self: start;
+    padding-left: 30px;
 }
 
 .boton{
-    display: grid;
     grid-area: boton;
-    align-items: center;
-    max-width: fit-content;
-    min-width: none;
+    align-self: center;
+    justify-self: center;
 }
 
-.footer{
-    display: grid;
-    grid-area: footer;
+footer{
+    grid-area:footer;
     font-family: var(--font-principal);
     color: var(--primary);  
     font-size: var(--text-small);
+    position:relative;
+    bottom: 0;
 }
 
 .fondo{
@@ -203,6 +205,17 @@ header label:hover{
     cursor: pointer;
     background-color: rgb(208, 208, 208);
     transition: all 1s;
+}
+
+.footer2{
+    font-size: var(--text-small);
+    font-family: var(--font-principal);
+    color: rgb(0, 0, 0);
+    display: block;
+    position: relative;
+    bottom: 0;
+    margin-left: 43%;
+    margin-top: 50px;
 }
 
 /*Nosotros*/
@@ -326,15 +339,33 @@ main .flexbox{
     background-color: rgba(35, 35, 35, 0.792);
 }
 
-.footer2{
-    font-size: var(--text-small);
-    font-family: var(--font-principal);
-    color: rgb(0, 0, 0);
-    display: block;
-    position: relative;
-    bottom: 0;
-    margin-left: 43%;
-    margin-top: 50px;
+@media screen and (max-width: 600px){
+    .grid{
+        display: grid;
+        grid-template-areas: 
+            "menu"
+            "titulo"
+            "subtitulo"
+            "boton"
+            "footer";
+        grid-template-columns: auto;
+        grid-template-rows: 0.5fr, 1fr, 1fr, 1fr, 0.5fr;
+        max-width: fit-content;
+    }
+
+    .titulo{
+        justify-self: center;
+        align-self: center;
+    }
+    .subtitulo{
+        justify-self: self-start;
+        align-self: start;
+    }
+
+    .footer{
+        position: relative;
+        bottom: 0;
+    }
 }
 
 @media screen and (max-width: 860px){
@@ -363,29 +394,9 @@ main .flexbox{
     #btn-menu:checked ~ .menu{
         margin: 0;
     }
-}
 
-@media screen and (max-width: 600px){
-    main .grid{
-        display: grid;
-        grid-template-areas: 
-            "menu"
-            "titulo"
-            "subtitulo"
-            "boton"
-            "footer";
-        grid-template-columns: auto;
-        grid-template-rows: 0.5fr, 1fr, 1fr, 1fr, 0.5fr;
-        max-width: fit-content;
-        margin: 15px;
-    }
-
-    .titulo{
-        justify-self: stretch;
-        align-self: end;
-    }
-    .subtitulo{
-        justify-self: self-start;
-        align-self: start;
+    .footer{
+        position: relative;
+        bottom: 0;
     }
 }
