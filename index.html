@@ -4,36 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../estilos.css/styles.css">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos.css/styles.css">
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    }
+    </style>
 </head>
 <body>
-        <section class="grid">
-            <header>
-            <input type="checkbox" id="btn-menu">
-            <label for="btn-menu"><img src="http://assets.stickpng.com/images/588a6507d06f6719692a2d15.png" width="30px" height="30px"></label>
-            <nav class="menu">
-                <ul>
-                    <li><a href="./index.html">Página principal</a></li>
-                    <li><a href="./formulario.html">Iniciar sesion / Registrarse</a></li>
-                    <li><a href="./nosotros.html">¿Quiénes somos?</a></li>
-                    <li><a href="./catalogo.html">Catálogo de series</a></li>
-                    <li><a href="./amigos.html">Amigos</a></li>
-                </ul>
-            </nav>
-            </header>
-            <div class="titulo">
-                <h1>Seriones</h1>
-            </div>
-            <div class="subtitulo">
-                <h2>Tu nueva red social de series</h2>
-            </div>
-            <div class="boton">
-                <img src="https://icones.pro/wp-content/uploads/2021/02/youtube-play-icone.png" width="300px" height="300px">
-            </div>
-            <footer class="footer">
-                <p>Bases y condiciones</p>
-            </footer>
-        </section>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="./paginas.html/formulario.html">Iniciar sesión / Registrarse</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Inicio<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="./paginas.html/nosotros.html">Nosotros</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="./paginas.html/catalogo.html">Catálogo de series</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="./paginas.html/amigos.html">Amigos</a>
+            </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="row align-items-center mt-5 ml-3">
+        <div class="col"> 
+            <h1 class="display-1 text-uppercase mb-3 col-md justify-content-center"> seriones </h1>
+            <h2><small class="col-md"> Tu nueva red social de series </small></h2>
+        </div>
+        <div class="col-md"> <img src="https://icones.pro/wp-content/uploads/2021/02/youtube-play-icone.png" width="300px" height="300px"> 
+        </div>
+    </div>
+    <div class="row align-items-end justify-content-center mt-5">
+        <footer class="text-dark"> <h5>Bases y condiciones</h5></footer>
+    </div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 </body>
 </html>
